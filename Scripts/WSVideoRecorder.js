@@ -1,5 +1,5 @@
 ﻿
-var WORKER_PATH = 'videoWorker.js';
+var WORKER_PATH = 'Scripts/videoWorker.js';
 
 function dataURItoView(dataURI) {
   // convert base64 to raw binary data held in a string
@@ -27,7 +27,7 @@ function WSVideoRecorder(mediaStream, wsURL, wsProtocol) {
   var previousImage; //so that we do not burden the network or receiver with dupes.
   this.isRecording = function () {
     return recording
-  }
+  };
   var config = {};
   var worker = new Worker(config.workerPath || WORKER_PATH);
   worker.postMessage({
